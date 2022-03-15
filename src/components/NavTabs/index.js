@@ -2,12 +2,13 @@ import React from 'react';
 
 function NavTabs({ currentPage, handlePageChange }) {
     return (
-            <ul className="nav nav-tabs">
 
-                {/* set the site title on header */}
-                <li>
-                    <h2 className='site-title'>PokéBuff</h2>
-                </li>
+        <header className='header-section'>
+
+            {/* set the site title on header */}
+            <h2 className='site-title'>PokéBuff</h2>
+
+            <ul className="nav nav-tabs">
 
                 {/*  navigation tab to the home section */}
                 <li >
@@ -88,6 +89,7 @@ function NavTabs({ currentPage, handlePageChange }) {
 
                 </li>
             </ul>
+        </header>
     );
 }
 
