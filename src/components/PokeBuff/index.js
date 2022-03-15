@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Header from '../Header';
 import NavTabs from '../NavTabs';
 import Pokedex from '../Pokedex';
 import Home from '../Home';
@@ -56,6 +57,7 @@ function PokeBuff() {
             {renderPage()}
 
         </div>
+        
     );
 }
 

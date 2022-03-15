@@ -4,7 +4,7 @@ function LogIn() {
     return (
         <section className='login-section'>
 
-            <h1 id="login" className="login-page-title">Log In:</h1>
+            <h1 id="login" className="login-page-title">Sign Up:</h1>
 
             {/* sign up users and allow email/saving features */}
             {/* email */}

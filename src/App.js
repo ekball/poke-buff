@@ -10,6 +10,8 @@ function App () {
 
   return (
     <div >
+      <Header />
+
       <PokeBuff />
 
       <Footer />

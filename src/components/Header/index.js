@@ -1,5 +1,19 @@
 import React from "react";
-import Nav from "../NavTabs"
+import NavTabs from "../NavTabs";
+
+// // navigation is located in the header
+// function Header() {
+
+//     return(
+
+//         <header className="header-section">
+
+           
+            
+//         </header>
+
+//     );
+// }
 
 // navigation is located in the header
 function Header(props) {
@@ -14,14 +28,14 @@ function Header(props) {
 
         <header className="header-section">
 
-            <Nav
+            <NavTabs
                 nav={nav}
                 currentNav={currentNav}
                 setCurrentNav={setCurrentNav}
                 className='nav-tabs'
             >
                 
-            </Nav>
+            </NavTabs>
             
         </header>
 
