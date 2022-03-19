@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { randomize } from '../../utils/helpers';
 
-const GRAPHQL_API = "https://graphql-pokeapi.graphcdn.app/";
 const GET_POKEMON_QUERY = `query pokemons($limit: Int, $offset: Int) {
             pokemons(limit: $limit, offset: $offset) {
                 count
@@ -56,6 +55,9 @@ function Pokedex() {
 
             <img className='main-image' src={pokeImage} alt='pokemon'></img>
             <p>{pokeName}</p>
+
+            <p>Want to learn more about {pokeName}?</p>
+            <button>Click Here!</button>
         
         </div>
     );
