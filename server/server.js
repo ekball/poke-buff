@@ -26,11 +26,11 @@ const startServer = async () => {
   // integrate our apollo server with the express application as middleware
   server.applyMiddleware({ app });
 
-  // test our GQL API
+  // test GraphQL API
   console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
 };
 
-// Initialize the Apollo server
+// initialize apollo server
 startServer();
 
 app.use(express.urlencoded({ extended: false }));
