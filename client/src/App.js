@@ -1,7 +1,6 @@
 import './App.css';
 import React from 'react';
 import PokeBuff from './components/PokeBuff';
-import Header from './components/Header';
 import Footer from './components/Footer';
 
 
