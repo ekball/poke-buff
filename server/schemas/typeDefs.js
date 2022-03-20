@@ -2,9 +2,18 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-  type Query {
-    helloWorld: String
-  }
+
+    type Reaction {
+        _id: ID
+        reactionText: String
+        createdAt: String
+        username: String
+    }
+
+    type Query {
+        reactions: [Reaction]
+    }
+
 `;
 
 // export typeDefs
