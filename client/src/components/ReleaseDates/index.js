@@ -52,7 +52,7 @@ function ReleaseDates() {
     },[])
 
     return (
-        <div >
+        <div className='flex flex-wrap'>
             <h1 id="releases" className="release-page-title">Upcoming Game Release Dates</h1>
                 <ul>
                     <li>

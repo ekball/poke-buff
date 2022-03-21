@@ -3,7 +3,7 @@ import React from "react";
 function Footer() {
 
     return(
-        <div className="footer-section">
+        <div className="footer-section flex flex-wrap">
 
             Credit to ____ for providing the dex information.
             Credit to ____ for providing the game release date information.

@@ -1,31 +1,66 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-function LogIn() {
-    return (
-        <section className='login-section'>
+const SignUp = () => {
+  const [formState, setFormState] = useState({ username: '', email: '', password: '' });
 
-            <h1 id="login" className="login-page-title">Sign Up:</h1>
+  // update state based on form input changes
+  const handleChange = (event) => {
+    const { name, value } = event.target;
 
-            {/* sign up users and allow email/saving features */}
-            {/* email */}
-            {/* encrypt password */}
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
 
-            {/* subsection for email input */}
-            {/* <div className='email-input'>
-                    <label htmlFor="email" >Email: </label>
-                    <input type="email" name="email" defaultValue={email} onBlur={} />
-                </div> */}
+  // submit form
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+  };
 
-            {/* subsection for email input */}
-            {/* <div className='password-input'>
-                    <label htmlFor="password" >Password: </label>
-                    <input type="text" name="password" defaultValue={} onBlur={} />
-                </div> */}
+  return (
+    <main className='flex justify-center'>
+      <div className='flex flex-wrap'>
+        <div className='flex'>
+          <h4 className='flex'>Sign Up</h4>
+          <div className='flex'>
+            <form onSubmit={handleFormSubmit}>
+              <input
+                className='flex'
+                placeholder='New Username'
+                name='username'
+                type='username'
+                id='username'
+                value={formState.username}
+                onChange={handleChange}
+              />
+              <input
+                className='flex'
+                placeholder='Email'
+                name='email'
+                type='email'
+                id='email'
+                value={formState.email}
+                onChange={handleChange}
+              />
+              <input
+                className='flex'
+                placeholder='******'
+                name='password'
+                type='password'
+                id='password'
+                value={formState.password}
+                onChange={handleChange}
+              />
+              <button className='flex' type='submit'>
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+  );
+};
 
-                
-
-        </section>
-    );
-}
-
-export default LogIn;
+export default SignUp;

@@ -1,24 +1,79 @@
-import React from 'react';
-// import Figure from '../../assets/images/';
+import React, {useState, useEffect} from 'react';
+import { randomize } from '../../utils/helpers';
+
+const GET_POKEMON_QUERY = `query pokemons($limit: Int, $offset: Int) {
+            pokemons(limit: $limit, offset: $offset) {
+                count
+                results {
+                    url
+                    name
+                    image
+                }
+            }
+          }`;
 
 function Home() {
+    
+    const [pokeImage, setPokeImage] = useState([]);
+    const [pokeName, setPokeName] = useState([]);
+
+    // choose a random number out of total existing pokemon
+    const randomNumber = randomize(1100)
+
+    // variables set up to use api
+        // return a single pokemon
+        // offset count from zero by the random number chosen above
+    const gqlVariables = {
+        limit: 1,
+        offset: randomNumber,
+    };
+
+    // fetch request to pull pokemon image
+    useEffect(() => {
+        fetch('https://graphql-pokeapi.graphcdn.app/', {
+            method: "POST",
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ query: GET_POKEMON_QUERY, variables: gqlVariables }),
+        })
+        .then(response => response.json())
+        .then(data => setPokeImage(data.data.pokemons.results[0].image))
+    },[])
+
+    // fetch request to pull pokemon image
+    useEffect(() => {
+        fetch('https://graphql-pokeapi.graphcdn.app/', {
+            method: "POST",
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ query: GET_POKEMON_QUERY, variables: gqlVariables }),
+        })
+        .then(response => response.json())
+        .then(data => setPokeName(data.data.pokemons.results[0].name))
+    },[])
 
     return (
-        <section className='home-section'>
+        <div className='flex flex-wrap justify-center '>
 
-            <h1 id="home" className="home-intro">Welcome to the World of Pokémon!</h1>
+            <ul className='pokedex-style flex flex-wrap grid-rows-4 gap-5'>
+                <li>
+                    <p>{pokeName}</p>
+                </li>
 
-            {/* Insert random pokemon here */}
-            {/* <img src={Figure}/> */}
+                <li>
+                    <img className='main-image' src={pokeImage} alt='pokemon'></img>
+                </li>
 
-            {/* Insert random info related about the pokemon here */}
-                {/* Height/Weight */}
-                {/* Dex Entry */}
-                {/* Type */}
-                {/* Evoution(s) */}
+                <li>
+                    <p>Want to learn more about {pokeName}?</p>
+                </li>
 
-        </section>
+                <li>
+                    <button>Click Here!</button>
+                </li>
+
+            </ul>
+        
+        </div>
     );
-}
+}  
 
 export default Home;

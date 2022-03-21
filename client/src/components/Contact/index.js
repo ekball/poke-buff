@@ -49,7 +49,7 @@ function Contact() {
     };
 
     return (
-        <section className='contact-section'>
+        <section className='contact-section flex flex-wrap'>
 
             <h1 className='contact-title'>Contact</h1>
 

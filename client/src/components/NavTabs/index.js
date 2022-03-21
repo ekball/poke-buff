@@ -3,12 +3,13 @@ import React from 'react';
 function NavTabs({ currentPage, handlePageChange }) {
     return (
 
-        <header className='header-section'>
+        <header className='header-section flex flex-wrap justify-evenly'>
+
 
             {/* set the site title on header */}
-            <h2 className='site-title'>PokéBuff</h2>
+            <h2 className='site-title flex flex-wrap'>PokéBuff</h2>
 
-            <ul className="nav nav-tabs">
+            <ul className="nav nav-tabs flex flex-row gap-8 ">
 
                 {/*  navigation tab to the home section */}
                 <li >

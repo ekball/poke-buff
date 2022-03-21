@@ -51,13 +51,32 @@ function Pokedex() {
     },[])
 
     return (
-        <div >
+        <div className='flex flex-wrap justify-center '>
 
-            <img className='main-image' src={pokeImage} alt='pokemon'></img>
-            <p>{pokeName}</p>
+            <ul className='pokedex-style flex flex-wrap grid-rows-4 gap-5'>
+                <li>
+                    <p>{pokeName}</p>
+                </li>
 
-            <p>Want to learn more about {pokeName}?</p>
-            <button>Click Here!</button>
+                <li>
+                    <img className='main-image' src={pokeImage} alt='pokemon'></img>
+                </li>
+
+                <li>
+                    <p>Want to learn more about {pokeName}?</p>
+                </li>
+
+                <li>
+                    <button>Click Here!</button>
+                </li>
+
+            </ul>
+
+            
+
+
+ 
+            
         
         </div>
     );
