@@ -1,4 +1,5 @@
 const { User, Reaction, Reply } = require('../models');
+const { AuthenticationError } = require('apollo-server-express');
 
 const resolvers = {
     Query: {
@@ -24,6 +25,16 @@ const resolvers = {
           .populate('friends')
           .populate('thoughts');
       },
+    },
+    Mutation: {
+      // create a new user (signup)
+      addUser: async (parent, args) => {
+        const user = await User.create(args);
+        return user;
+      },
+      login: async () => {
+  
+      }
     }
   };
   

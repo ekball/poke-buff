@@ -35,6 +35,11 @@ const typeDefs = gql`
         reaction(_id: ID!): Reaction
     }
 
+    type Mutation {
+        login(email: String!, password: String!): User
+        addUser(username: String!, email: String!, password: String!): User
+      }
+
 `;
 
 // export typeDefs
