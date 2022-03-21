@@ -18,7 +18,8 @@ const typeDefs = gql`
         username: String
         replyCount: Int
         replies: [Reply]
-    },
+    }
+
     type Reply {
         _id: ID
         replyBody: String
@@ -32,7 +33,7 @@ const typeDefs = gql`
         reactions(username: String): [Reaction]
         reaction(_id: ID!): Reaction
     }
- `;
+`;
 
- // export typeDefs
+// export typeDefs
 module.exports = typeDefs;
