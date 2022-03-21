@@ -16,6 +16,10 @@ code {
   background-image: linear-gradient(red, black, white);
 }
 
+.nav-tab {
+  background-image: linear-gradient(red, black, white);
+}
+
 .pokedex-style{
   display: flex;
   flex-wrap: wrap;

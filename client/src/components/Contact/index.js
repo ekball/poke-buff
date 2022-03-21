@@ -49,9 +49,9 @@ function Contact() {
     };
 
     return (
-        <section className='contact-section flex flex-wrap'>
+        <section className='contact-section flex flex-wrap justify-center'>
 
-            <h1 className='contact-title'>Contact</h1>
+            <h1 className='contact-title flex flex-wrap gap-5'>Contact</h1>
 
             <form onSubmit={handleSubmit}>
                 {/* subsection for name input */}
