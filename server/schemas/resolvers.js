@@ -14,5 +14,14 @@ const resolvers = {
         .populate('friends')
         .populate('reactions')
       },
+      reaction: async (parent, { username }) => {
+        const parms = username ? { username } : {};
+        return Reaction.find(parms).sort({ createdAt: -1 });
+      },
+      reaction: async (parent, { _id }) => {
+        return Reaction.findOne({ _id });
+      },
     }
 };
+
+module.exports = resolvers;
