@@ -19,4 +19,20 @@ const typeDefs = gql`
         replyCount: Int
         replies: [Reply]
     },
-    `;
+    type Reply {
+        _id: ID
+        replyBody: String
+        createdAt: String
+        username: String
+        }
+
+    type Query {
+        users: [User]
+        user(username: String!): User
+        reactions(username: String): [Reaction]
+        reaction(_id: ID!): Reaction
+    }
+ `;
+
+ // export typeDefs
+module.exports = typeDefs;
