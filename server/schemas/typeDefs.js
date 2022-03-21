@@ -5,13 +5,22 @@ const typeDefs = gql`
 
     type Reaction {
         _id: ID
+        thoughtText: String
+        createdAt: String
+        username: String
+        reactionCount: Int
+        reactions: [Reaction]
+    }
+
+    type Reaction {
+        _id: ID
         reactionText: String
         createdAt: String
         username: String
     }
 
     type Query {
-        reactions: [Reaction]
+        reactions(username:String): [Reaction]
     }
 
 `;

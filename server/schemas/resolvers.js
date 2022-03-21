@@ -1,8 +1,11 @@
+const { User, Reaction } = require('../models');
+
 const resolvers = {
     Query: {
-      helloWorld: () => {
-        return 'Hello world!';
-      }
+      reactions: async (parent, { username }) => {
+        const params = username ? { username } : {};
+        return Reaction.find(params).sort({ createdAt: -1 });
+      },
     }
   };
   

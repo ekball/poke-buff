@@ -1,12 +1,12 @@
 const { Schema, model } = require('mongoose');
-const reactionSchema = require('./Reaction');
+const replySchema = require('./Reply');
 const dateFormat = require('../utils/dateFormat');
 
 const reactionSchema = new Schema(
   {
     reactionText: {
       type: String,
-      required: 'Please leave a reaction!',
+      required: 'You need to leave a reaction!',
       minlength: 1,
       maxlength: 280
     },
@@ -19,6 +19,7 @@ const reactionSchema = new Schema(
       type: String,
       required: true
     },
+    replies: [replySchema]
   },
   {
     toJSON: {
@@ -27,6 +28,10 @@ const reactionSchema = new Schema(
   }
 );
 
-const reaction = model('reaction', reactionSchema);
+reactionSchema.virtual('replyCount').get(function() {
+  return this.replies.length;
+});
 
-module.exports = reaction;
+const Reaction = model('Reaction', reactionSchema);
+
+module.exports = Reaction;
