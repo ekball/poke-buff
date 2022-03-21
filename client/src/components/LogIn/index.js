@@ -29,12 +29,12 @@ const LogIn = (props) => {
         
       <div className='flex flex-wrap '>
 
-        <div className='flex gap-5'>
+        <div className='flex'>
           <h4 className='flex'>Login</h4>
           <div className='flex'>
-            <form onSubmit={handleFormSubmit}>
+            <form onSubmit={handleFormSubmit} >
               <input
-                className='flex'
+                className='flex m-5 focus:ring-indigo-500 flex m-5 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-slate-900'
                 placeholder='Email'
                 name='email'
                 type='email'
@@ -43,7 +43,7 @@ const LogIn = (props) => {
                 onChange={handleChange}
               />
               <input
-                className='flex'
+                className='flex m-5 focus:ring-indigo-500 flex m-5 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-slate-900'
                 placeholder='******'
                 name='password'
                 type='password'

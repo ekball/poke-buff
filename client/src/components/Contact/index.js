@@ -49,27 +49,29 @@ function Contact() {
     };
 
     return (
-        <section className='contact-section flex flex-wrap justify-center'>
+        <section className='contact-section flex flex-wrap justify-center items-start col-1'>
 
-            <h1 className='contact-title flex flex-wrap gap-5'>Contact</h1>
+            <div className='gap-5'>
+            <h1 className='contact-title flex flex-wrap '>Contact</h1>
+            </div>
 
             <form onSubmit={handleSubmit}>
                 {/* subsection for name input */}
-                <div className='contact-section'>
+                <div className='contact-section m-5'>
                     <label htmlFor="name" >Name: </label>
-                    <input type="text" name="name" defaultValue={name} onBlur={handleChange} />
+                    <input type="text" name="name" defaultValue={name} onBlur={handleChange} className='focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-slate-900'/>
                 </div>
 
                 {/* subsection for email input */}
-                <div className='contact-section'>
+                <div className='contact-section m-5'>
                     <label htmlFor="email" >Email: </label>
-                    <input type="email" name="email" defaultValue={email} onBlur={handleChange} />
+                    <input type="email" name="email" defaultValue={email} onBlur={handleChange} className='focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-slate-900'/>
                 </div>
 
                 {/* subsection to for message input */}
-                <div className='contact-section message-box-title'>
+                <div className='contact-section message-box-title m-5'>
                     <label htmlFor="message" >Message: </label>
-                    <textarea name="message" rows="3" defaultValue={message} onBlur={handleChange} />
+                    <textarea name="message" rows="3" defaultValue={message} onBlur={handleChange} className='focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-slate-900'/>
                 </div>
 
                 {/* subsection to print error message */}
@@ -78,7 +80,7 @@ function Contact() {
                     <p className="error-text">{errorMessage}</p>
                 </div>
                 )}
-                <button className='contact-button' type="submit">Send</button>
+                <button className='m-5 rounded-md hover:text-slate-100 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500' type="submit">Send</button>
             </form>
 
         </section>

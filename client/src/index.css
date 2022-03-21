@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: lightslategray;
 }
 
 code {
@@ -21,6 +22,10 @@ code {
 }
 
 .nav-tab {
+  background-image: linear-gradient(red, black, white);
+}
+
+.contact-button {
   background-image: linear-gradient(red, black, white);
 }
 
