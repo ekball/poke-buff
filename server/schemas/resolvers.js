@@ -1,8 +1,17 @@
 const { User, Reaction, Reply } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
+      me: async (parent, args) => {
+        const userData = await User.findOne({})
+          .select('-__v -password')
+          .populate('reactions')
+          .populate('friends');
+    
+        return userData;
+      },
       reactions: async (parent, { username }) => {
         const params = username ? { username } : {};
         return Reaction.find(params).sort({ createdAt: -1 });
@@ -30,22 +39,25 @@ const resolvers = {
       // create a new user (signup)
       addUser: async (parent, args) => {
         const user = await User.create(args);
-        return user;
+        const token = signToken(user);
+      
+        return { token, user };
       },
       login: async (parent, { email, password }) => {
         const user = await User.findOne({ email });
       
         if (!user) {
-          throw new AuthenticationError('Incorrect email and/or password');
+          throw new AuthenticationError('Incorrect credentials');
         }
       
         const correctPw = await user.isCorrectPassword(password);
       
         if (!correctPw) {
-          throw new AuthenticationError('Incorrect email and/or password');
+          throw new AuthenticationError('Incorrect credentials');
         }
       
-        return user;
+        const token = signToken(user);
+        return { token, user };
       }
     }
   };
