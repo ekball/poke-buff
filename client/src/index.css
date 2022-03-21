@@ -30,6 +30,12 @@ code {
   flex-direction: column;
 }
 
+.releases-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

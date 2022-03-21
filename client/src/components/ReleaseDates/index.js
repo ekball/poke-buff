@@ -52,17 +52,56 @@ function ReleaseDates() {
     },[])
 
     return (
-        <div className='flex flex-wrap'>
-            <h1 id="releases" className="release-page-title">Upcoming Game Release Dates</h1>
-                <ul>
+        <div className='releases-container'>
+
+            <div className='flex flex-wrap justify-around align-center'>
+                <ul className='justify-center space-y-5 items-stretch'>
+                    <h1 id="releases" className="release-page-title flex flex-wrap space-x-5">Upcoming Game Releases</h1>
+                    <div className=''>
+                        <div className=''>    
+                            <li>
+                                <h3>{pokeName}</h3>
+                            </li>
+                            <li>
+                                <p>{releaseDate}</p>
+                            </li>
+                        </div>
+                        <div className='grid-rows-1'>
+                            <li>
+                                <button className='rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-slate-100 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'>Click Here!</button>
+                            </li>
+                        </div>
+                    </div>
                     <li>
-                        <h3>{pokeName}</h3>
-                        <img className='future-date-image' src={pokeImage} alt='pokemon'></img>
-                        <p>{releaseDate}</p>
+                        <img className='future-date-image object-scale-down w-1/2 h-1/2' src={pokeImage} alt='pokemon'></img>
                     </li>
                 </ul>
-            <button>Click Here!</button>
-        
+            </div>
+
+            <div className='flex flex-wrap justify-around align-center'>
+                <ul className='justify-end items-stretch space-y-5'>
+                    <h1 id="releases" className="release-page-title flex flex-wrap space-x-5">Previous Game Releases</h1>
+                    <div className='grid-rows-1'>
+                        <div className='justify-start grid-rows-2'>    
+                            <li>
+                                <h3>{pokeName}</h3>
+                            </li>
+                            <li>
+                                <p>{releaseDate}</p>
+                            </li>
+                        </div>
+                        <div className='grid-rows-1'>
+                            <li>
+                                <button className='rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-slate-100 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'>Click Here!</button>
+                            </li>
+                        </div>
+                    </div>
+                    <li>
+                        <img className='future-date-image object-scale-down w-1/2 h-1/2' src={pokeImage} alt='pokemon'></img>
+                    </li>
+                </ul>
+            </div>
+
         </div>
     );
 
