@@ -27,6 +27,10 @@ const reactionSchema = new Schema(
   }
 );
 
+reactionSchema.virtual('replyCount').get(function() {
+  return this.replies.length;
+});
+
 const reaction = model('reaction', reactionSchema);
 
 module.exports = reaction;
