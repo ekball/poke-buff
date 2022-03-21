@@ -3,10 +3,10 @@ import React from 'react';
 function NavTabs({ currentPage, handlePageChange }) {
     return (
 
-        <header className='header-section w-full items-center mx-auto px-4 sm:px-6'>
+        <header className='header-section w-full justify-items-center mx-auto px-4 sm:px-6'>
 
                 {/* set the site title on header */}
-                <h2 className='site-title flex justify-start lg:w-0 lg:flex-1'>PokéBuff</h2>
+                <h1 className='site-title flex items-center lg:w-0 lg:flex-1'>PokéBuff</h1>
 
                 <div className='flex justify-center border-b-2 border-slate-900 py-6 md:justify-start md:space-x-10'>
 

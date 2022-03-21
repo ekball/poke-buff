@@ -11,4 +11,12 @@ export var randomize = function(max) {
   
     return value;
   
-  };
+};
+
+export var capitalize = function(string) {
+
+    var firstLetter = string.substring(0, 1);
+
+    firstLetter.toUpperCase();
+
+}
