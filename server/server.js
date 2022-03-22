@@ -1,4 +1,5 @@
 const express = require('express');
+
 // import authentication middleware
 const { authMiddleware } = require('./utils/auth');
 const path = require('path');
