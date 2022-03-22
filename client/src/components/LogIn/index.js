@@ -25,14 +25,17 @@ const LogIn = (props) => {
   };
 
   return (
-    <main className='flex justify-center '>
+    
         
-      <div className='flex flex-wrap '>
+      <section className=''>
 
-        <div className='flex'>
-          <h4 className='flex'>Login</h4>
-          <div className='flex'>
-            <form onSubmit={handleFormSubmit} >
+        
+        <div className='text-center'>
+          <h1 className='font-bold text-xl'>Login</h1>  
+         </div> 
+          
+          
+            <form onSubmit={handleFormSubmit} class="container px-20 mx-auto rounded-full">
               <input
                 className='flex m-5 focus:ring-indigo-500 flex m-5 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-slate-900'
                 placeholder='Email'
@@ -55,10 +58,10 @@ const LogIn = (props) => {
                 Submit
               </button>
             </form>
-          </div>
-        </div>
-      </div>
-    </main>
+          
+        </section>
+      
+  
   );
 };
 
