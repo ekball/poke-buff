@@ -4,16 +4,38 @@ import { Redirect, useParams } from 'react-router-dom';
 import ReactionList from '../components/ReactionList';
 
 import { useQuery, useMutation } from '@apollo/client';
-import { QUERY_USER, QUERY_ME } from '../utils/queries';
+import { QUERY_REACTIONS, QUERY_USER, QUERY_ME } from '../utils/queries';
 import FriendList from '../components/FriendList';
 import Auth from '../utils/auth';
-import { ADD_FRIEND } from '../utils/mutations';
+import { ADD_FRIEND, ADD_REACTION } from '../utils/mutations';
 import ReactionForm from '../components/ReactionForm';
 
 
 const Profile = () => {
 
     const [addFriend] = useMutation(ADD_FRIEND);
+
+    const [addReaction, { error }] = useMutation(ADD_REACTION, {
+        update(cache, { data: { addReaction } }) {
+          try {
+            // could potentially not exist yet, so wrap in a try...catch
+            const { reactions } = cache.readQuery({ query: QUERY_REACTIONS });
+            cache.writeQuery({
+              query: QUERY_REACTIONS,
+              data: { reactions: [addReaction, ...reactions] }
+            });
+          } catch (e) {
+            console.error(e);
+          }
+      
+          // update me object's cache, appending new thought to the end of the array
+          const { me } = cache.readQuery({ query: QUERY_ME });
+          cache.writeQuery({
+            query: QUERY_ME,
+            data: { me: { ...me, reactions: [...me.reactions, addReaction] } }
+          });
+        }
+      });
 
     const { username: userParam } = useParams();
 

@@ -37,3 +37,18 @@ export const ADD_FRIEND = gql`
     }
   }
 `;
+
+export const ADD_REACTION = gql`
+  mutation addReaction($reactionText: String!) {
+    addReaction(reactionText: $reactionText) {
+      _id
+      reactionText
+      createdAt
+      username
+      replyCount
+      replies {
+        _id
+      }
+    }
+  }
+`;
