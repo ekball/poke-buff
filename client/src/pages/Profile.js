@@ -1,41 +1,18 @@
 import React from 'react';
 import { Redirect, useParams } from 'react-router-dom';
 
+import ReactionForm from '../components/ReactionForm';
 import ReactionList from '../components/ReactionList';
+import FriendList from '../components/FriendList';
 
 import { useQuery, useMutation } from '@apollo/client';
-import { QUERY_REACTIONS, QUERY_USER, QUERY_ME } from '../utils/queries';
-import FriendList from '../components/FriendList';
+import { QUERY_USER, QUERY_ME } from '../utils/queries';
+import { ADD_FRIEND } from '../utils/mutations';
 import Auth from '../utils/auth';
-import { ADD_FRIEND, ADD_REACTION } from '../utils/mutations';
-import ReactionForm from '../components/ReactionForm';
-
 
 const Profile = () => {
 
     const [addFriend] = useMutation(ADD_FRIEND);
-
-    const [addReaction, { error }] = useMutation(ADD_REACTION, {
-        update(cache, { data: { addReaction } }) {
-          try {
-            // could potentially not exist yet, so wrap in a try...catch
-            const { reactions } = cache.readQuery({ query: QUERY_REACTIONS });
-            cache.writeQuery({
-              query: QUERY_REACTIONS,
-              data: { reactions: [addReaction, ...reactions] }
-            });
-          } catch (e) {
-            console.error(e);
-          }
-      
-          // update me object's cache, appending new thought to the end of the array
-          const { me } = cache.readQuery({ query: QUERY_ME });
-          cache.writeQuery({
-            query: QUERY_ME,
-            data: { me: { ...me, reactions: [...me.reactions, addReaction] } }
-          });
-        }
-      });
 
     const { username: userParam } = useParams();
 
@@ -74,32 +51,36 @@ const Profile = () => {
 
     return (
         <div>
-            <div className="flex-row mb-3">
-                <h2 className="bg-dark text-secondary p-3 display-inline-block">
-                    Viewing {userParam ? `${user.username}'s` : 'your'} profile.
-                </h2>
+      <div className="flex-row mb-3">
+        <h2 className="bg-dark text-secondary p-3 display-inline-block">
+          Viewing {userParam ? `${user.username}'s` : 'your'} profile.
+        </h2>
 
-                {userParam && (
-                <button className="btn ml-auto" onClick={handleClick}>
-                    Add Friend
-                </button>
-                )}
-            </div>
+        {userParam && (
+          <button className="btn ml-auto" onClick={handleClick}>
+            Add Friend
+          </button>
+        )}
+      </div>
 
-            <div className="text-center m-5">
-                <div className="">
-                <ReactionList reactions={user.reactions} title={`${user.username}'s reactions...`} />
-                </div>
-
-                <div className="text-center m-5">
-                <FriendList
-                    username={user.username}
-                    friendCount={user.friendCount}
-                    friends={user.friends}
-                />
-                </div>
-            </div>
+      <div className="flex-row justify-space-between mb-3">
+        <div className="col-12 mb-3 col-lg-8">
+          <ReactionList
+            reactions={user.reactions}
+            title={`${user.username}'s thoughts...`}
+          />
         </div>
+
+        <div className="col-12 col-lg-3 mb-3">
+          <FriendList
+            username={user.username}
+            friendCount={user.friendCount}
+            friends={user.friends}
+          />
+        </div>
+      </div>
+      <div className="mb-3">{!userParam && <ReactionForm />}</div>
+    </div>
     );
 };
 

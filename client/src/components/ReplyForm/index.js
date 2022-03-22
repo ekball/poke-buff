@@ -1,43 +1,65 @@
 import React, { useState } from 'react';
 
-const ReplyForm = ({ reactionId }) => {
+import { useMutation } from '@apollo/client';
+import { ADD_REACTION } from '../../utils/mutations';
 
-    const [replyBody, setBody] = useState('');
-    const [characterCount, setCharacterCount] = useState(0);
+const ReplyForm = ({ thoughtId }) => {
+  const [replyBody, setBody] = useState('');
+  const [characterCount, setCharacterCount] = useState(0);
+  const [addReply, { error }] = useMutation(ADD_REACTION);
 
-    const handleChange = event => {
-        if (event.target.value.length <= 280) {
-            setBody(event.target.value);
-            setCharacterCount(event.target.value.length);
-        }
-    };
+  // update state based on form input changes
+  const handleChange = (event) => {
+    if (event.target.value.length <= 280) {
+      setBody(event.target.value);
+      setCharacterCount(event.target.value.length);
+    }
+  };
 
-    const handleFormSubmit = async event => {
-        event.preventDefault();
-        setBody('');
-        setCharacterCount(0);
-    };
+  // submit form
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
 
-    return (
-        <div>
-            <p className={`m-0 ${characterCount === 280 || error ? 'text-error' : ''}`}>
-                Character Count: {characterCount}/280
-                {error && <span className="ml-2">Something went wrong...</span>}
-            </p>
-            <form className="flex-row justify-center justify-space-between-md align-stretch" onSubmit={handleFormSubmit}>
-                <textarea
-                    placeholder="Here's a new reaction..."
-                    value={replyBody}
-                    className="form-input col-12 col-md-9"
-                    onChange={handleChange}
-                ></textarea>
+    try {
+      await addReply({
+        variables: { replyBody, thoughtId },
+      });
 
-                <button className="btn col-12 col-md-3" type="submit">
-                    Submit
-                </button>
-            </form>
-        </div>
-    );
+      // clear form value
+      setBody('');
+      setCharacterCount(0);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  return (
+    <div>
+      <p
+        className={`m-0 ${characterCount === 280 || error ? 'text-error' : ''}`}
+      >
+        Character Count: {characterCount}/280
+        {error && <span className="ml-2">Something went wrong...</span>}
+      </p>
+      <form
+        className="flex-row justify-center justify-space-between-md align-stretch"
+        onSubmit={handleFormSubmit}
+      >
+        <textarea
+          placeholder="Leave a reply to this thought..."
+          value={replyBody}
+          className="form-input col-12 col-md-9"
+          onChange={handleChange}
+        ></textarea>
+
+        <button className="btn col-12 col-md-3" type="submit">
+          Submit
+        </button>
+      </form>
+
+      {error && <div>Something went wrong...</div>}
+    </div>
+  );
 };
 
 export default ReplyForm;

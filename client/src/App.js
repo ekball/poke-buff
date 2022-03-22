@@ -14,6 +14,8 @@ import Dex from './pages/Dex';
 import Releases from './pages/Releases';
 import Home from './pages/Home';
 import NoMatch from './pages/NoMatch';
+import Chatroom from './pages/Chatroom';
+
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -53,6 +55,7 @@ function App () {
               <Route exact path="/signup" component={Signup} />
               <Route exact path="/profile/:username?" component={Profile} />
               <Route exact path="/reaction/:id" component={SingleReaction} />
+              <Route exact path="/chatroom" component={Chatroom} />
               <Route exact path="/dex" component={Dex} />
               <Route exact path="/releases" component={Releases} />
               <Route component={NoMatch}/>

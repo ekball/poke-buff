@@ -26,7 +26,7 @@ const ReactionList = ({ reactions, title }) => {
               <Link to={`/reaction/${reaction._id}`}>
                 <p>{reaction.reactionText}</p>
                 <p className="mb-0">
-                  Reactions: {reaction.replyCount} || Click to{' '}
+                  Replies: {reaction.replyCount} || Click to{' '}
                   {reaction.replyCount ? 'see' : 'start'} the discussion!
                 </p>
               </Link>
