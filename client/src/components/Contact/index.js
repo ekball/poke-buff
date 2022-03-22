@@ -49,13 +49,13 @@ function Contact() {
     };
 
     return (
-        <section className='contact-section flex flex-wrap justify-center items-start col-1'>
+        <section className='contact-section'>
 
-            <div className='gap-5'>
-            <h1 className='contact-title flex flex-wrap '>Contact</h1>
+            <div className='text-center'>
+            <h1 className='contact-title font-bold text-xl'>Contact</h1>
             </div>
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} class="container px-20 mx-auto rounded-full">
                 {/* subsection for name input */}
                 <div className='contact-section m-5'>
                     <label htmlFor="name" >Name: </label>
@@ -80,7 +80,7 @@ function Contact() {
                     <p className="error-text">{errorMessage}</p>
                 </div>
                 )}
-                <button className='m-5 rounded-md hover:text-slate-100 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500' type="submit">Send</button>
+                <button className='m-5 align-center rounded-md hover:text-slate-100 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500' type="submit">Send</button>
             </form>
 
         </section>

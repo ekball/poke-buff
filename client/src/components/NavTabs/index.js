@@ -6,11 +6,11 @@ function NavTabs({ currentPage, handlePageChange }) {
         <header className='header-section w-full justify-items-center mx-auto px-4 sm:px-6'>
 
                 {/* set the site title on header */}
-                <h1 className='site-title text-center shrink-[2] lg:w-0 lg:flex-1 text-6xl font-bold font-[Oswald]'>PokéBuff</h1>
+                <h1 className='site-title text-center shrink-[2] lg:w-0 lg:flex-1 text-6xl font-bold font-[Oswald] mx-auto'>PokéBuff</h1>
 
                 <div className='flex justify-center border-b-2 border-slate-900 py-6 md:justify-start md:space-x-10'>
 
-                <ul className="nav flex flex-row gap-10 justify-between content-center">
+                <ul className="nav flex flex-row gap-10 justify-between content-center mx-auto">
 
                     {/*  navigation tab to the home section */}
                     <li className='nav-tab hover:animate-bounce rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-slate-100 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 '>
