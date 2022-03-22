@@ -41,9 +41,9 @@ function App () {
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Signup} />
               <Route exact path="/profile" component={Profile} />
-              <Route exact path="/thought" component={SingleReaction} />
+              <Route exact path="/reaction" component={SingleReaction} />
               <Route exact path="/dex" component={Dex} />
-              <Route exact path="releases/" component={Releases} />
+              <Route exact path="/releases" component={Releases} />
               <Route component={NoMatch}/>
             </Switch>
           </div>
