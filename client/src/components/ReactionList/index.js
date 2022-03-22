@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
 const ReactionList = ({ reactions, title }) => {
   if (!reactions.length) {
-    return <h3>No Reactions have been left...</h3>;
+    return <h3>No Reactions Yet</h3>;
   }
 
   return (
@@ -12,26 +11,25 @@ const ReactionList = ({ reactions, title }) => {
       <h3>{title}</h3>
       {reactions &&
         reactions.map(reaction => (
-          <div key={reaction._id} className="mb-3">
-            <p className="">
-            <Link
+          <div key={reaction._id} className="card mb-3">
+            <p className="card-header">
+              <Link
                 to={`/profile/${reaction.username}`}
-                
-                className="font-light"
-            >
+                style={{ fontWeight: 700 }}
+                className="text-light"
+              >
                 {reaction.username}
-            </Link>{' '}
-            reaction on {reaction.createdAt}
+              </Link>{' '}
+              reaction on {reaction.createdAt}
             </p>
-
-            <div className="">
-                <Link to={`/reaction/${reaction._id}`}>
-                    <p>{reaction.reactionText}</p>
-                    <p className="mb-0">
-                    Replies: {reaction.replyCount} || Click to{' '}
-                    {reaction.replyCount ? 'see' : 'start'} the discussion!
-                    </p>
-                </Link>
+            <div className="card-body">
+              <Link to={`/reaction/${reaction._id}`}>
+                <p>{reaction.reactionText}</p>
+                <p className="mb-0">
+                  Reactions: {reaction.replyCount} || Click to{' '}
+                  {reaction.replyCount ? 'see' : 'start'} the discussion!
+                </p>
+              </Link>
             </div>
           </div>
         ))}

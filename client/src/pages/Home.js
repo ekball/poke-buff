@@ -1,6 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import { randomize, capitalize } from '../utils/helpers';
 
+import { useQuery } from '@apollo/client';
+import { QUERY_REACTIONS } from '../utils/queries';
+import ReactionList from '../components/ReactionList';
+
 const GET_POKEMON_QUERY = `query pokemons($limit: Int, $offset: Int) {
             pokemons(limit: $limit, offset: $offset) {
                 count
@@ -50,29 +54,45 @@ function Home() {
         .then(data => setPokeName(data.data.pokemons.results[0].name))
     },[])
 
+    // use useQuery hook to make query request
+    const { loading, data } = useQuery(QUERY_REACTIONS);
+
+    const reactions = data?.reactions || [];
+    console.log(reactions);
+
     return (
-        <div className='flex flex-wrap justify-center '>
+        <main className='flex flex-wrap columns-2'>
+            <div className='flex flex-wrap align-middle'>
 
-            <ul className='pokedex-style flex flex-wrap grid-rows-4 gap-5'>
-                <li>
-                    <p>{pokeName}</p>
-                </li>
+                <ul className='pokedex-style flex flex-wrap grid-rows-4 gap-5'>
+                    <li>
+                        <p>{pokeName}</p>
+                    </li>
 
-                <li>
-                    <img className='main-image' src={pokeImage} alt='pokemon'></img>
-                </li>
+                    <li>
+                        <img className='main-image' src={pokeImage} alt='pokemon'></img>
+                    </li>
 
-                <li>
-                    <p>Want to learn more about {pokeName}?</p>
-                </li>
+                    <li>
+                        <p>Want to learn more about {pokeName}?</p>
+                    </li>
 
-                <li>
-                    <button>Click Here!</button>
-                </li>
+                    <li>
+                        <button>Click Here!</button>
+                    </li>
+                </ul>
+            </div>
 
-            </ul>
-        
-        </div>
+            <div className="flex-row">
+                <div className="columns-1 mb-3">
+                    {loading ? (
+                        <div>Loading...</div>
+                    ) : (
+                        <ReactionList reactions={reactions} title="Some Feed for Reaction(s)..." />
+                    )}
+                </div>
+            </div>
+        </main>
     );
 }  
 

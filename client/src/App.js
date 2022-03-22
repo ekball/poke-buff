@@ -40,8 +40,8 @@ function App () {
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Signup} />
-              <Route exact path="/profile" component={Profile} />
-              <Route exact path="/reaction" component={SingleReaction} />
+              <Route exact path="/profile/:username?" component={Profile} />
+              <Route exact path="/reaction/:id" component={SingleReaction} />
               <Route exact path="/dex" component={Dex} />
               <Route exact path="/releases" component={Releases} />
               <Route component={NoMatch}/>
