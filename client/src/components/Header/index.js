@@ -24,7 +24,7 @@ const Header = () => {
             {Auth.loggedIn() ? (
                 <>
                 <Link to="/profile" className='nav-tab hover:animate-bounce rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-slate-100 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 '>Profile</Link>
-                <a href="/" onClick={logout}>
+                <a href="/" onClick={logout} className='nav-tab hover:animate-bounce rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-slate-100 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'>
                     Logout
                 </a>
                 </>
