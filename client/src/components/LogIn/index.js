@@ -54,7 +54,7 @@ const LogIn = (props) => {
                 value={formState.password}
                 onChange={handleChange}
               />
-              <button className='flex' type='submit'>
+              <button className='m-5 content-center rounded-md hover:text-slate-100 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500' type='submit'>
                 Submit
               </button>
             </form>
