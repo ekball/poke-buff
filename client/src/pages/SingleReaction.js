@@ -1,14 +1,14 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-import { QUERY_REACTIONS } from '../utils/queries';
+import { QUERY_REACTION } from '../utils/queries';
 import ReactionList from '../components/ReactionList';
 
 const SingleReaction = props => {
 
   const { id: reactionId } = useParams();
 
-  const { loading, data } = useQuery(QUERY_REACTIONS, {
+  const { loading, data } = useQuery(QUERY_REACTION, {
   variables: { id: reactionId }
   });
 

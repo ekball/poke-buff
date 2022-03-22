@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { randomize } from '../../utils/helpers';
+import { randomize } from '../utils/helpers';
 
 const GET_POKEMON_QUERY = `query pokemons($limit: Int, $offset: Int) {
             pokemons(limit: $limit, offset: $offset) {
@@ -95,12 +95,6 @@ function Pokedex() {
                 </li>
 
             </ul>
-
-            
-
-
- 
-            
         
         </div>
     );
