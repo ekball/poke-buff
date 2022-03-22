@@ -2,8 +2,11 @@ import React, {useState, useEffect} from 'react';
 import { randomize, capitalize } from '../utils/helpers';
 
 import { useQuery } from '@apollo/client';
-import { QUERY_REACTIONS } from '../utils/queries';
 import ReactionList from '../components/ReactionList';
+import { QUERY_REACTIONS, QUERY_ME_BASIC } from '../utils/queries';
+import Auth from '../utils/auth';
+import FriendList from '../components/FriendList';
+
 
 const GET_POKEMON_QUERY = `query pokemons($limit: Int, $offset: Int) {
             pokemons(limit: $limit, offset: $offset) {
@@ -17,6 +20,8 @@ const GET_POKEMON_QUERY = `query pokemons($limit: Int, $offset: Int) {
           }`;
 
 function Home() {
+
+    const loggedIn = Auth.loggedIn();
     
     const [pokeImage, setPokeImage] = useState([]);
     const [pokeName, setPokeName] = useState([]);
@@ -60,6 +65,9 @@ function Home() {
     const reactions = data?.reactions || [];
     console.log(reactions);
 
+    // use object destructuring to extract `data` from the `useQuery` Hook's response and rename it `userData` to be more descriptive
+    const { data: userData } = useQuery(QUERY_ME_BASIC);
+
     return (
         <main className='flex flex-wrap columns-2'>
             <div className='flex flex-wrap align-middle'>
@@ -84,13 +92,23 @@ function Home() {
             </div>
 
             <div className="flex-row">
-                <div className="columns-1 mb-3">
+                <div className={`columns-2 mb-3 ${loggedIn && 'columns-lg'}`}>
                     {loading ? (
                         <div>Loading...</div>
                     ) : (
-                        <ReactionList reactions={reactions} title="Some Feed for Reaction(s)..." />
+                        <ReactionList reactions={reactions} title="Some Feed for Thought(s)..." />
                     )}
                 </div>
+                {loggedIn && userData ? (
+                <div className="col-12 col-lg-3 mb-3">
+                    <FriendList
+                    username={userData.me.username}
+                    friendCount={userData.me.friendCount}
+                    friends={userData.me.friends}
+                />
+  </div>
+) : null}
+
             </div>
         </main>
     );
