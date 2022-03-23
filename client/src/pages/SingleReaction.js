@@ -22,14 +22,16 @@ const SingleReaction = props => {
   return (
     <div>
       <div className="mb-3">
-        <p className="">
-          <span className="font-bold">
+        <p className="m-3">
+          <span className="flex justify-center mb-2">
             {reaction.username}
-          </span>{' '}
-          reaction on {reaction.createdAt}
+          </span>
+          <div className='flex justify-center'>{' '}
+            reaction on {reaction.createdAt}
+          </div>
         </p>
-        <div className="">
-          <p>{reaction.reactionText}</p>
+        <div className="flex justify-center text-yellow-600">
+          <p>" {reaction.reactionText} "</p>
         </div>
       </div>
       {Auth.loggedIn() && <ReactionForm reactionId={reaction._id} />}

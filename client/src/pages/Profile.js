@@ -50,20 +50,20 @@ const Profile = () => {
     };
 
     return (
-        <div className='flex justify-center min-h-screen'>
+        <div className='flex justify-around min-h-screen'>
 
-          <div className="flex-row justify-around">
-            <h2 className="">
-              Viewing {userParam ? `${user.username}'s` : 'your'} profile.
+          <div className="flex-row justify-center">
+            <h2 className="m-5">
+              Welcome to {userParam ? `${user.username}'s` : 'your'} profile.
             </h2>
             {userParam && (
-              <button className="" onClick={handleClick}>
+              <button className="flex justify-center px-6 py-2.5 bg-gray-800 text-yellow-500 font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg " onClick={handleClick}>
                 Add Friend
               </button>
             )}
           </div>
 
-          <div className="flex-col justify-between mb-3">
+          <div className="flex-col justify-between m-3">
             <div className="rounded-lg shadow-lg max-w-lg card-bottom justify-center">
               <ReactionList
                 reactions={user.reactions}
@@ -71,7 +71,7 @@ const Profile = () => {
               />
             </div>
 
-            <div className="rounded-lg shadow-lg max-w-lg card-bottom justify-center">
+            <div className="rounded-lg shadow-lg  card-bottom justify-center ">
               <FriendList
                 username={user.username}
                 friendCount={user.friendCount}

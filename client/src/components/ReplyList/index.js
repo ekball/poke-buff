@@ -12,7 +12,7 @@ const ReplyList = ({ replies }) => {
                 replies.map(reply => (
                     <p className="rounded-full mb-3" key={reply._id}>
                     {reply.replyBody} {'// '}
-                    <Link to={`/profile/${reply.username}`} style={{ fontWeight: 700 }}>
+                    <Link to={`/profile/${reply.username}`} style={{ fontWeight: 500 }}>
                         {reply.username} on {reply.createdAt}
                     </Link>
                     </p>
