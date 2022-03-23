@@ -98,27 +98,18 @@ function Home() {
                     </div>
                 </div>
 
-                <div className=''>
-                    {loggedIn && (
-                        <div className="m-5">
-                            <ReactionForm />
-                        </div>
-                    )}
-
-                    <div className={`col-12 mb-3 ${loggedIn && 'col-lg-8'}`}></div>
-                </div>
+                
             </div>
 
-            <div className="text-center">
-                
+            <div className="flex flex-wrap justify-around text-center">
+                <div className="flex justify-center space-x-5 ">
+                    <container className="rounded-lg shadow-lg max-w-lg card-bottom justify-center bg-scroll max-h-100">
 
-                <div className="flex-row ">
-                    <container className="">
                         <div className={`columns-2 mb-3 ${loggedIn && 'columns-lg'}`}>
                             {loading ? (
                                 <div>Loading...</div>
                             ) : (
-                                <ReactionList reactions={reactions} title="Recent Reactions..." />
+                                <ReactionList reactions={reactions} title="Here is what everyone is saying..." />
                             )}
                         </div>
                         {loggedIn && userData ? (
@@ -132,7 +123,16 @@ function Home() {
                         ) : null}
                     </container>
 
+                    <div className=''>
+                    {loggedIn && (
+                        <div className="m-5">
+                            <ReactionForm />
+                        </div>
+                    )}
+
+                    <div className={`col-12 mb-3 ${loggedIn && 'col-lg-8'}`}></div>
                 </div>
+            </div>
                 <div className="mb-3">{!useParams && <ReactionForm />}</div>
             </div>
         </main>

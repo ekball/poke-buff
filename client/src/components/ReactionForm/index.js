@@ -51,19 +51,19 @@ const ThoughtForm = () => {
         <div>
             <p className={`m-0 ${characterCount === 280 || error ? 'text-error' : ''}`}>
                 Character Count: {characterCount}/280
-                {error && <span className="ml-2">Something went wrong...</span>}
+                {error && <span className="m-2">Something went wrong...</span>}
             </p>
             <form
-                className="flex-row justify-center justify-space-between-md align-stretch"
+                className="flex-row justify-center justify-between align-stretch"
                 onSubmit={handleFormSubmit}
             >            
-            <textarea
-                placeholder="Any Reactions?"
-                value={reactionText}
-                className="form-input rounded-md"
-                onChange={handleChange}
-            ></textarea>
-                <button className="submit-button" type="submit">
+                <textarea
+                    placeholder="Any Reactions?"
+                    value={reactionText}
+                    className="form-input rounded-md w-full h-40"
+                    onChange={handleChange}
+                ></textarea>
+                <button className="flex px-6 py-2.5 bg-gray-800 text-yellow-500 font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 hover:ease-in-out" type="submit">
                     Submit
                 </button>
             </form>
