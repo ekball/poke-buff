@@ -54,7 +54,7 @@ function ReleaseDates() {
     return (
         <div>
             <div>
-                <h1 id="releases" className="release-page-title flex flex-wrap justify-center break-after text-xgit l">Upcoming Game Releases</h1>
+                <h1 id="releases" className="release-page-title flex flex-wrap justify-center break-after text-xl">Upcoming Game Releases</h1>
             </div>
             <div class="flex justify-center">
                 <div className='releases-container rounded-lg shadow-lg bg-white max-w-sm justify-center'>

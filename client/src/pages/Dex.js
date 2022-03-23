@@ -74,28 +74,23 @@ function Pokedex() {
     // },[])
 
     return (
-        <div className='main-container flex flex-wrap justify-center '>
+        <div>
+            <div>
+                <h1 id="releases" className="text-xl release-page-title flex flex-wrap justify-center break-after">Gotta catch 'em all!</h1>
+            </div>
+            <div class="flex justify-center">
+                <div className='releases-container rounded-lg shadow-lg bg-white max-w-md justify-center'>
+                    <img className='future-date-image rounded-t-lg' src={pokeImage} alt='pokemon'></img>
+                    <div class="p-6 justify-center items-center text-center">
+                        <h1 class="text-xl">{pokeName}</h1>
+                        <h2>Want to learn more about {pokeName}?</h2>
+                        
+                        <button className='rounded-md p-2 items-center justify-center text-white bg-black hover:text-slate-100 hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'>Click Here!</button>
+                    </div>
+                        
+                </div>
 
-            <ul className='inner-container pokedex-style flex flex-wrap grid-rows-4 gap-5'>
-
-                <li className='container-title'>
-                    <h2>{pokeName}</h2>
-                </li>
-
-                <li className='container-body'>
-                    <img className='main-image' src={pokeImage} alt='pokemon'></img>
-                </li>
-
-                <li className='container-b-left'>
-                    {/* <p>Abiity: {pokeAbility}?</p> */}
-                </li>
-
-                <li className='container-b-right'>
-                    {/* <p>Type: {pokeType}?</p> */}
-                </li>
-
-            </ul>
-        
+            </div>
         </div>
     );
 }  
