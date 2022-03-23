@@ -22,5 +22,8 @@
   "homepage": "https://github.com/ekball/poke-buff#readme",
   "devDependencies": {
     "concurrently": "^7.0.0"
+  },
+  "dependencies": {
+    "debug": "^4.3.4"
   }
 }
