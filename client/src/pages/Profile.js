@@ -50,37 +50,37 @@ const Profile = () => {
     };
 
     return (
-        <div>
-      <div className="flex-row mb-3">
-        <h2 className="bg-dark text-secondary p-3 display-inline-block">
-          Viewing {userParam ? `${user.username}'s` : 'your'} profile.
-        </h2>
+        <div className='flex justify-center min-h-screen'>
 
-        {userParam && (
-          <button className="btn ml-auto" onClick={handleClick}>
-            Add Friend
-          </button>
-        )}
-      </div>
+          <div className="flex-row justify-around">
+            <h2 className="">
+              Viewing {userParam ? `${user.username}'s` : 'your'} profile.
+            </h2>
+            {userParam && (
+              <button className="" onClick={handleClick}>
+                Add Friend
+              </button>
+            )}
+          </div>
 
-      <div className="flex-row justify-space-between mb-3">
-        <div className="col-12 mb-3 col-lg-8">
-          <ReactionList
-            reactions={user.reactions}
-            title={`${user.username}'s thoughts...`}
-          />
+          <div className="flex-col justify-between mb-3">
+            <div className="rounded-lg shadow-lg max-w-lg card-bottom justify-center">
+              <ReactionList
+                reactions={user.reactions}
+                title={`${user.username}'s reaction...`}
+              />
+            </div>
+
+            <div className="rounded-lg shadow-lg max-w-lg card-bottom justify-center">
+              <FriendList
+                username={user.username}
+                friendCount={user.friendCount}
+                friends={user.friends}
+              />
+            </div>
+          </div>
+          <div className="mb-3">{!userParam && <ReactionForm />}</div>
         </div>
-
-        <div className="col-12 col-lg-3 mb-3">
-          <FriendList
-            username={user.username}
-            friendCount={user.friendCount}
-            friends={user.friends}
-          />
-        </div>
-      </div>
-      <div className="mb-3">{!userParam && <ReactionForm />}</div>
-    </div>
     );
 };
 

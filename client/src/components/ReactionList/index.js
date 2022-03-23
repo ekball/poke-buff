@@ -7,12 +7,12 @@ const ReactionList = ({ reactions, title }) => {
   }
 
   return (
-    <div>
-      <h3>{title}</h3>
+    <div className=''>
+      <h3 className='flex justify-center rounded-t-lg bg-rose-500 w-full p-2'>{title}</h3>
       {reactions &&
         reactions.map(reaction => (
           <div key={reaction._id} className="card mb-3">
-            <p className="card-header">
+            <p className="flex justify-center w-full p-2">
               <Link
                 to={`/profile/${reaction.username}`}
                 style={{ fontWeight: 700 }}
@@ -20,12 +20,12 @@ const ReactionList = ({ reactions, title }) => {
               >
                 {reaction.username}
               </Link>{' '}
-              reaction on {reaction.createdAt}
+              on {reaction.createdAt}
             </p>
-            <div className="card-body">
+            <div className="flex justify-center rounded-b-lg bg-slate-200 w-full p-2">
               <Link to={`/reaction/${reaction._id}`}>
-                <p>{reaction.reactionText}</p>
-                <p className="mb-0">
+                <p className='flex justify-center text-yellow-600'>{reaction.reactionText}</p>
+                <p className="">
                   Replies: {reaction.replyCount} || Click to{' '}
                   {reaction.replyCount ? 'see' : 'start'} the discussion!
                 </p>
