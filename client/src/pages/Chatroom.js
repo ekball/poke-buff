@@ -22,35 +22,38 @@ const Chatroom = () => {
 
     return (
    
-    <main className='flex flex-wrap columns-2'>
+    <main className='flex flex-wrap text-center justify-center'>
 
-            <div className="flex-row justify-space-between">
-                {loggedIn && (
-                    <div className="col-12 mb-3">
-                        <ReactionForm />
-                    </div>
-                )}
-            <div className={`col-12 mb-3 ${loggedIn && 'col-lg-8'}`}></div>
-
-            <div className="flex-row">
-                <div className={`columns-2 mb-3 ${loggedIn && 'columns-lg'}`}>
-                    {loading ? (
-                        <div>Loading...</div>
-                    ) : (
-                        <ReactionList reactions={reactions} title="Some Feed for Thought(s)..." />
+                <div className="flex-row justify-center text-center w-fit">
+                    {loggedIn && (
+                        <div className="col-12 mb-3">
+                            <ReactionForm />
+                        </div>
                     )}
-                </div>
-                    {loggedIn && userData ? (
-                    <div className="col-12 col-lg-3 mb-3">
-                        <FriendList
-                        username={userData.me.username}
-                        friendCount={userData.me.friendCount}
-                        friends={userData.me.friends}
-                    />
-                </div>
-                ) : null}
-            </div>
-            <div className="mb-3">{!useParams && <ReactionForm />}</div>
+                    <div className={`col-12 mb-3 ${loggedIn && 'col-lg-8'}`}></div>
+
+                    <div className="flex justify-center space-x-5">    
+                        <container className="rounded-lg shadow-lg max-w-lg card-bottom justify-center bg-scroll max-h-100">
+
+                            <div className={`columns-2 mb-3 ${loggedIn && 'columns-lg'}`}>
+                                {loading ? (
+                                    <div>Loading...</div>
+                                ) : (
+                                    <ReactionList reactions={reactions} title="Here is what everyone is saying..." />
+                                )}
+                            </div>
+                            {loggedIn && userData ? (
+                            <div className="border text-red-300">
+                                <FriendList
+                                username={userData.me.username}
+                                friendCount={userData.me.friendCount}
+                                friends={userData.me.friends}
+                                />
+                            </div>
+                            ) : null}
+                        </container>
+                    </div>
+                <div className="mb-3">{!useParams && <ReactionForm />}</div>
             </div>
         </main>
     );

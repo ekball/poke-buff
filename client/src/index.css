@@ -48,6 +48,10 @@ code {
   border: black, 5px, solid;
 }
 
+textarea{
+  border:black,3px,solid;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
