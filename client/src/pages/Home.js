@@ -147,7 +147,7 @@ function Home() {
     const { data: userData } = useQuery(QUERY_ME_BASIC);
 
     return (
-        <main className='min-h-screen items-center align-items-center bg-gray-200'>
+        <main className='min-h-screen items-center align-items-center'>
 
             <div className='flex flex-wrap justify-around text-center'>
 

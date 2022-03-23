@@ -120,6 +120,11 @@ function Pokedex() {
     },[])
 
     return (
+        <div>
+            <div>
+                <h1 id="releases" className="text-xl release-page-title flex flex-wrap justify-center break-after m-5">Gotta catch 'em all!</h1>
+            </div>
+
         <div className='flex flex-wrap justify-around text-center'>
 
                 <div className='pokemon-container flex justify-center space-x-5 m-5'>
@@ -185,6 +190,7 @@ function Pokedex() {
                     </div>
                 </div>
             </div>
+        </div>
     );
 }  
 

@@ -52,7 +52,7 @@ function ReleaseDates() {
     },[])
 
     return (
-        <div className='min-h-screen items-center align-items-center bg-gray-200'>
+        <div className='min-h-screen items-center align-items-center'>
             <h1 id="releases" className="release-page-title flex justify-center flex-wrap space-x-5 p-10">Upcoming Game Releases</h1>
             <div className='releases-container flex justify-center space-x-5'>
 

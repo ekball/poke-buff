@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background-image: linear-gradient(45deg, black,slategray,black,slategray,black,slategray,black,slategray); */
-  background-color: whitesmoke;
+  background-color: rgb(173, 229, 252);
 }
 
 code {
@@ -15,9 +15,9 @@ code {
 }
 
 .header-section {
-  /* background-image: url("../public/grass-background.png"); */
+  background-image: url("../public/grass-background.png");
   /* background-image: linear-gradient(315deg, black,slategray,black,slategray,black,slategray,black,slategray); */
-  background-image: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(47,42,42,1) 50%, rgba(244,44,50,1) 100%);
+  /* background-image: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(47,42,42,1) 50%, rgba(244,44,50,1) 100%); */
 }
 
 .site-title {
@@ -49,8 +49,9 @@ code {
 }
 
 textarea{
-  border:black,3px,solid;
+  outline:black,3px,solid;
 }
+
 
 @tailwind base;
 @tailwind components;
