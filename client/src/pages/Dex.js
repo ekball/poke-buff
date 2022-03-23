@@ -74,28 +74,31 @@ function Pokedex() {
     // },[])
 
     return (
-        <div className='main-container flex flex-wrap justify-center '>
+        <div className='releases-container flex justify-center space-x-5'>
 
-            <ul className='inner-container pokedex-style flex flex-wrap grid-rows-4 gap-5'>
+            <div className='p-6'>
 
-                <li className='container-title'>
+                <div className='container-title rounded-lg shadow-lg bg-white max-w-sm'>
                     <h2>{pokeName}</h2>
-                </li>
+                </div>
+                
 
-                <li className='container-body'>
+                <div className='container-body justify-center flex-wrap space-x-5'>
                     <img className='main-image' src={pokeImage} alt='pokemon'></img>
-                </li>
+                </div>
 
-                <li className='container-b-left'>
+
+                <div className='container-b-left flex space-x-2 justify-center'>
                     {/* <p>Abiity: {pokeAbility}?</p> */}
-                </li>
+                </div>
 
-                <li className='container-b-right'>
+
+                <div className='container-b-right flex space-x-2 justify-center'>
                     {/* <p>Type: {pokeType}?</p> */}
-                </li>
+                </div>
 
-            </ul>
         
+            </div>
         </div>
     );
 }  
