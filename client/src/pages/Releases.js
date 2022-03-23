@@ -53,32 +53,23 @@ function ReleaseDates() {
 
     return (
         <div>
-            <div className='releases-container flex justify-center'>
-            <h1 id="releases" className="release-page-title flex flex-wrap space-x-5">Upcoming Game Releases</h1>
-            <div className='rounded-lg shadow-lg bg-white max-w-sm'>
-                <img className='future-date-image rounded-t-lg' src={pokeImage} alt='pokemon'></img>
-                
-
-                <div className='p-6'>
-                    <div className=''>    
-                        <li>
-                            <h3>{pokeName}</h3>
-                        </li>
-                                <li>
-                                    <p>{releaseDate}</p>
-                                </li>
-                            </div>
-                            <div className='grid-rows-1'>
-                                <li>
-                                    <button className='rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-slate-100 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'>Click Here!</button>
-                                </li>
-                            </div>
-                        </div>
-
+            <div>
+                <h1 id="releases" className="release-page-title flex flex-wrap justify-center break-after text-xl">Upcoming Game Releases</h1>
+            </div>
+            <div class="flex justify-center">
+                <div className='releases-container rounded-lg shadow-lg bg-white max-w-sm justify-center'>
+                    <img className='future-date-image rounded-t-lg' src={pokeImage} alt='pokemon'></img>
+                    <div class="p-6 justify-center items-center text-center">
+                        
+                        <h3>{pokeName}</h3>
+                        <button className='rounded-md p-2 items-center justify-center text-white bg-black hover:text-slate-100 hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'>Click Here!</button>
                     </div>
+                        
                 </div>
 
+            </div>
         </div>
+            
         
         
     );
