@@ -5,7 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: lightslategray;
+  /* background-image: linear-gradient(45deg, black,slategray,black,slategray,black,slategray,black,slategray); */
+  background-color: whitesmoke;
 }
 
 code {
@@ -14,7 +15,9 @@ code {
 }
 
 .header-section {
-  background-image: linear-gradient(red, black, white);
+  /* background-image: url("../public/grass-background.png"); */
+  /* background-image: linear-gradient(315deg, black,slategray,black,slategray,black,slategray,black,slategray); */
+  background-image: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(47,42,42,1) 50%, rgba(244,44,50,1) 100%);
 }
 
 .site-title {
@@ -22,11 +25,7 @@ code {
 }
 
 .nav-tab {
-  background-image: linear-gradient(red, black, white);
-}
-
-.contact-button {
-  background-image: linear-gradient(red, black, white);
+  background-image: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(47,42,42,1) 50%, rgba(244,44,50,1) 100%);
 }
 
 .pokedex-style{
@@ -39,6 +38,14 @@ code {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+}
+
+.card-bottom {
+  background-image: linear-gradient(315deg, whitesmoke,slategray,whitesmoke,slategray,whitesmoke,slategray,whitesmoke,slategray);
+}
+
+.text-container {
+  border: black, 5px, solid;
 }
 
 @tailwind base;

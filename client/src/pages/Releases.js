@@ -52,30 +52,35 @@ function ReleaseDates() {
     },[])
 
     return (
-        <div className='releases-container'>
+        <div className='min-h-screen items-center align-items-center bg-gray-200'>
+            <h1 id="releases" className="release-page-title flex justify-center flex-wrap space-x-5 p-10">Upcoming Game Releases</h1>
+            <div className='releases-container flex justify-center space-x-5'>
 
-            <div className='flex flex-wrap justify-around align-center'>
-                <ul className='justify-center space-y-5 items-stretch'>
-                    <h1 id="releases" className="release-page-title flex flex-wrap space-x-5">Upcoming Game Releases</h1>
-                    <div className=''>
-                        <div className=''>    
-                            <li>
-                                <h3>{pokeName}</h3>
-                            </li>
-                            <li>
-                                <p>{releaseDate}</p>
-                            </li>
+                <div className="rounded-lg shadow-lg bg-white max-w-sm">
+
+                    <img className='rounded-t-lg future-date-image' src={pokeImage} alt='pokemon'></img>
+                            
+                    <div className='p-6 card-bottom'>
+                                
+                        <div className='justify-center flex-wrap space-x-5 text-center'>    
+                                
+                            <h3>{pokeName}</h3>
+                                    
+                            <p className='m-5 '>{releaseDate}</p>
+                                
                         </div>
-                        <div className='grid-rows-1'>
-                            <li>
-                                <button className='rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-slate-100 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'>Click Here!</button>
-                            </li>
+
+                        <div class="flex space-x-2 justify-center">
+
+                            <button type="button" class="inline-block px-6 py-2.5 bg-gray-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out ">
+                                <a href="https://scarletviolet.pokemon.com/en-us/" className='text-yellow-500'>
+                                Click Here for Info
+                                </a>
+                            </button>
+                            
                         </div>
                     </div>
-                    <li>
-                        <img className='future-date-image object-scale-down w-1/2 h-1/2' src={pokeImage} alt='pokemon'></img>
-                    </li>
-                </ul>
+                </div>
             </div>
         </div>
     );

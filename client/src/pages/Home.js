@@ -73,55 +73,67 @@ function Home() {
     const { data: userData } = useQuery(QUERY_ME_BASIC);
 
     return (
-        <main className='flex flex-wrap columns-2'>
-            <div className='flex flex-wrap align-middle'>
+        <main className='min-h-screen items-center align-items-center bg-gray-200'>
 
-                <ul className='pokedex-style flex flex-wrap grid-rows-4 gap-5'>
-                    <li>
-                        <p>{pokeName}</p>
-                    </li>
+            <div className='flex flex-wrap justify-around text-center'>
 
-                    <li>
-                        <img className='main-image' src={pokeImage} alt='pokemon'></img>
-                    </li>
+                <div className='pokemon-container flex justify-center space-x-5 m-5'>
 
-                    <li>
-                        <p>Want to learn more about {pokeName}?</p>
-                    </li>
+                    <div className="rounded-lg shadow-lg max-w-sm card-bottom justify-center">
 
-                    <li>
-                        <button>Click Here!</button>
-                    </li>
-                </ul>
-            </div>
+                        <p className='p-2'>{pokeName}</p>
 
-            <div className="flex-row justify-space-between">
-                {loggedIn && (
-                    <div className="col-12 mb-3">
-                        <ReactionForm />
+                        <img className='' src={pokeImage} alt='pokemon'></img>
+
+                        <div className='p-6'>
+
+                            <p>Want to learn more about {pokeName}?</p>
+
+                            <button type="button" class="inline-block px-6 py-2.5 bg-gray-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out ">
+                                <a href="https://www.serebii.net/pokedex-swsh/" className='text-yellow-500'>
+                                    Click Here!
+                                </a>
+                            </button>
+                        </div>
                     </div>
-                )}
-            <div className={`col-12 mb-3 ${loggedIn && 'col-lg-8'}`}></div>
+                </div>
 
-            <div className="flex-row">
-                <div className={`columns-2 mb-3 ${loggedIn && 'columns-lg'}`}>
-                    {loading ? (
-                        <div>Loading...</div>
-                    ) : (
-                        <ReactionList reactions={reactions} title="Some Feed for Thought(s)..." />
+                <div className=''>
+                    {loggedIn && (
+                        <div className="m-5">
+                            <ReactionForm />
+                        </div>
                     )}
+
+                    <div className={`col-12 mb-3 ${loggedIn && 'col-lg-8'}`}></div>
                 </div>
-                    {loggedIn && userData ? (
-                    <div className="col-12 col-lg-3 mb-3">
-                        <FriendList
-                        username={userData.me.username}
-                        friendCount={userData.me.friendCount}
-                        friends={userData.me.friends}
-                    />
-                </div>
-                ) : null}
             </div>
-            <div className="mb-3">{!useParams && <ReactionForm />}</div>
+
+            <div className="text-center">
+                
+
+                <div className="flex-row ">
+                    <container className="">
+                        <div className={`columns-2 mb-3 ${loggedIn && 'columns-lg'}`}>
+                            {loading ? (
+                                <div>Loading...</div>
+                            ) : (
+                                <ReactionList reactions={reactions} title="Recent Reactions..." />
+                            )}
+                        </div>
+                        {loggedIn && userData ? (
+                        <div className="col-12 col-lg-3 mb-3">
+                            <FriendList
+                            username={userData.me.username}
+                            friendCount={userData.me.friendCount}
+                            friends={userData.me.friends}
+                            />
+                        </div>
+                        ) : null}
+                    </container>
+
+                </div>
+                <div className="mb-3">{!useParams && <ReactionForm />}</div>
             </div>
         </main>
     );

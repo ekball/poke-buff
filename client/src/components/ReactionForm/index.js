@@ -58,12 +58,12 @@ const ThoughtForm = () => {
                 onSubmit={handleFormSubmit}
             >            
             <textarea
-                placeholder="Here's a new reaction..."
+                placeholder="Any Reactions?"
                 value={reactionText}
-                className="form-input col-12 col-md-9"
+                className="form-input rounded-md"
                 onChange={handleChange}
             ></textarea>
-                <button className="btn col-12 col-md-3" type="submit">
+                <button className="submit-button" type="submit">
                     Submit
                 </button>
             </form>
