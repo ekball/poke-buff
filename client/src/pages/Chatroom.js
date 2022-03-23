@@ -33,7 +33,7 @@ const Chatroom = () => {
                     <div className={`col-12 mb-3 ${loggedIn && 'col-lg-8'}`}></div>
 
                     <div className="flex justify-center space-x-5">    
-                        <container className="rounded-lg shadow-lg max-w-lg card-bottom justify-center bg-scroll max-h-100">
+                        <div className="rounded-lg shadow-lg max-w-lg card-bottom justify-center bg-scroll max-h-100">
 
                             <div className={`columns-2 mb-3 ${loggedIn && 'columns-lg'}`}>
                                 {loading ? (
@@ -51,7 +51,7 @@ const Chatroom = () => {
                                 />
                             </div>
                             ) : null}
-                        </container>
+                        </div>
                     </div>
                 <div className="mb-3">{!useParams && <ReactionForm />}</div>
             </div>

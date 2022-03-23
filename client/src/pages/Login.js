@@ -41,16 +41,15 @@ const handleFormSubmit = async event => {
   };
 
   return (
-    <main className='flex justify-center '>
-        
-      <div className='flex flex-wrap '>
+    <main className='flex justify-center min-h-screen'>
+      <div className='flex-col flex-wrap text-center'>
+        <h2 className='flex mt-5 justify-center'>Log In</h2>
 
         <div className='flex'>
-          <h4 className='flex'>Login</h4>
           <div className='flex'>
-            <form onSubmit={handleFormSubmit} >
+            <form onSubmit={handleFormSubmit} className='flex-col justify-center'>
               <input
-                className='flex m-5 focus:ring-indigo-500 flex m-5 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-slate-900'
+                className='flex m-5 focus:ring-indigo-500 flex m-5 focus:border-indigo-500 flex-1 block w-full rounded-md sm:text-sm border-slate-900'
                 placeholder='Email'
                 name='email'
                 type='email'
@@ -59,7 +58,7 @@ const handleFormSubmit = async event => {
                 onChange={handleChange}
               />
               <input
-                className='flex m-5 focus:ring-indigo-500 flex m-5 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-slate-900'
+                className='flex m-5 focus:ring-indigo-500 flex m-5 focus:border-indigo-500 flex-1 block w-full rounded-md sm:text-sm border-slate-900'
                 placeholder='******'
                 name='password'
                 type='password'
@@ -67,7 +66,7 @@ const handleFormSubmit = async event => {
                 value={formState.password}
                 onChange={handleChange}
               />
-              <button className='flex' type='submit'>
+              <button className="inline-block px-6 py-2.5 bg-gray-800 text-yellow-500 font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out" type='submit'>
                 Submit
               </button>
             </form>

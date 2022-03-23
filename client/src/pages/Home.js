@@ -163,7 +163,7 @@ function Home() {
 
                             <p>Want to learn more about {pokeName}?</p>
 
-                            <button type="button" class="inline-block px-6 py-2.5 bg-gray-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out ">
+                            <button type="button" className="inline-block px-6 py-2.5 bg-gray-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out ">
                                 <a href="https://www.serebii.net/pokedex-swsh/" className='text-yellow-500'>
                                     Click Here!
                                 </a>
@@ -184,7 +184,7 @@ function Home() {
 
                             <p>Want to learn more about {pokeName2}?</p>
 
-                            <button type="button" class="inline-block px-6 py-2.5 bg-gray-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out ">
+                            <button type="button" className="inline-block px-6 py-2.5 bg-gray-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out ">
                                 <a href="https://www.serebii.net/pokedex-swsh/" className='text-yellow-500'>
                                     Click Here!
                                 </a>
@@ -205,7 +205,7 @@ function Home() {
 
                             <p>Want to learn more about {pokeName3}?</p>
 
-                            <button type="button" class="inline-block px-6 py-2.5 bg-gray-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out ">
+                            <button type="button" className="inline-block px-6 py-2.5 bg-gray-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out ">
                                 <a href="https://www.serebii.net/pokedex-swsh/" className='text-yellow-500'>
                                     Click Here!
                                 </a>
@@ -217,7 +217,7 @@ function Home() {
 
             <div className="flex flex-wrap justify-evenly text-center">
                 <div className="flex justify-center space-x-5 ">
-                    <container className="rounded-lg shadow-lg max-w-lg card-bottom justify-center bg-scroll max-h-100">
+                    <div className="rounded-lg shadow-lg max-w-lg card-bottom justify-center bg-scroll max-h-100">
 
                         <div className={`columns-2 mb-3 ${loggedIn && 'columns-lg'}`}>
                             {loading ? (
@@ -235,7 +235,7 @@ function Home() {
                             />
                         </div>
                         ) : null}
-                    </container>
+                    </div>
 
                     <div className=''>
                     {loggedIn && (
