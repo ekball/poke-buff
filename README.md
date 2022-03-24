@@ -33,11 +33,12 @@ Kyles Ball, Lexie Holder, Gabriel Andrews
 ## <a name="contributions"> Contributions </a>
 #### Kyles: 
 I built the front and back end using React, Apollo Server, MongoDB, GraphQL, PokeAPI, RawgAPI, CSS, Tailwind, BCrypt, JSONWebTokens. Gabriel Andrews helped create the authentication and GraphQl, but due to issues with GitHub, could not merge. His commits are saved in GitHub. Lexie Holder helped style some pages with Tailwind, but due to issues with GitHub, could not merge. Her commits are saved in GitHub.
+
 #### Gabriel:
 For my portion of the project, I did a lot of work on GraphQL. I worked through module 21 and used its examples to create our project’s code. Also, I worked on styling the project with the others and giving any amount of help that I could.
 
 #### Lexie:
-
+My role in this project was to incorporate the use of Tailwind in React to style the website and to be floating support. Much of my work was unable to be merged due to last-minute back-end changes and technical difficulties with GitHub, however I worked with the rest of the team to troubleshoot issues, keep up to date on changes, and to provide support.
 
       
 ## <a name="questions"> Questions? </a>
@@ -48,6 +49,6 @@ Gabriel - GitHub Link: **[gabrielandrews](https://github.com/gabrielandrews/)**
 Gabriel - Email Address: <gabem_29@yahoo.com>
 
 Lexie - GitHub Link: **[LexieHolder](https://github.com/LexieHolder/)**   
-Lexie - Email Address: <>
+Lexie - Email Address: <lexieannholder@gmail.com>
 
 
