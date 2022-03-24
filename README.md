@@ -5,6 +5,8 @@
 ## Description
 An application to message other Pokémon fans, look up Pokémon details, and future game release dates. This has authentication and has encrypted passwords, allowing users to log in and sign up, while also storing the information.   
 
+<img width="1439" alt="pokebuff-screenshot" src="https://user-images.githubusercontent.com/91437363/159994511-782df2f2-0670-43bc-8b4d-401afc8d455d.png">
+
         
 ## Table of Contents
 * [Installation](#install)
