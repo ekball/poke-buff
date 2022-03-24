@@ -17,7 +17,10 @@ An application to message other Pokémon fans, look up Pokémon details, and fut
 
          
 ## <a name="install"> Installation </a>
-In the client, run npm install. In the server directory, run npm install. In the root directory, run npm install.   
+After cloning the repository, you will need to install the dependencies. In the client, run npm install. In the server directory, run npm install. In the root directory, run npm install. Afterwards, run npm run seed.
+
+## Deployment
+Please go to https://fierce-mesa-57913.herokuapp.com/ for the deployed site. However, at the moment, the site does not load the app correctly, so it will need to be cloned and deployed locally.
 
     
 ## <a name="usage"> Usage </a>
@@ -34,6 +37,7 @@ I built the front and back end using React, Apollo Server, MongoDB, GraphQL, Pok
 For my portion of the project, I did a lot of work on GraphQL. I worked through module 21 and used its examples to create our project’s code. Also, I worked on styling the project with the others and giving any amount of help that I could.
 
 #### Lexie:
+
 
       
 ## <a name="questions"> Questions? </a>
