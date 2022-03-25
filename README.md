@@ -42,6 +42,9 @@ For my portion of the project, I did a lot of work on GraphQL. I worked through 
 #### Lexie:
 My role in this project was to incorporate the use of Tailwind in React to style the website and to be floating support. Much of my work was unable to be merged due to last-minute back-end changes and technical difficulties with GitHub, however I worked with the rest of the team to troubleshoot issues, keep up to date on changes, and to provide support.
 
+#### Raniah:
+My role was to work on GraphQL, however I was running into issues with getting the code to work. Afterwards, I focused on supporting the team with the remainder of tasks we had.
+
       
 ## <a name="questions"> Questions? </a>
 Kyles - GitHub Link: **[ekball](https://github.com/ekball/)**   
@@ -52,5 +55,8 @@ Gabriel - Email Address: <gabem_29@yahoo.com>
 
 Lexie - GitHub Link: **[LexieHolder](https://github.com/LexieHolder/)**   
 Lexie - Email Address: <lexieannholder@gmail.com>
+
+Raniah - Github Link: **[raniahj](https://github.com/raniahj/)**
+Raniah - Email Address: <raniahj06@gmail.com>
 
 
